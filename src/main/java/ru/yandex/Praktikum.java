@@ -1,12 +1,14 @@
 package ru.yandex;
 
+import com.sun.nio.sctp.SctpSocketOption;
+
 import java.security.PrivateKey;
 
 public class Praktikum {
 
     public static void main(String[] args) {
 
-        String accountName = "Тимоте Шаламе";
+        String accountName = "Тимоти Шаламе";
 
         /*
              В этом методе заложи логику работы с классом Account.
@@ -15,7 +17,11 @@ public class Praktikum {
          */
 
         Account account = new Account(accountName);
-        System.out.println(account.checkNameToEmboss());
+        if(account.checkNameToEmboss()) {
+            System.out.println("Name " + accountName + " is valid");
+        } else {
+            System.out.println("Name " + accountName + " is not valid");
+        }
     }
 
 }
